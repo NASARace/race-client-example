@@ -14,10 +14,10 @@ lazy val root = (project in file(".")).
   settings(
     mainClass in Compile := Some("gov.nasa.race.main.ConsoleMain"),  // we just use RACEs driver
     libraryDependencies ++= Seq(
-      "gov.nasa" %% "race-core" % "1.+",
-      "gov.nasa" %% "race-air" % "1.+",
-      "gov.nasa" %% "race-ww" % "1.+",
-      "gov.nasa" %% "race-ww-air" % "1.+",       // depends on race-core, race-ww, race-air but since we use those explicitly we define the dependencies
+      "gov.nasa.race" %% "race-core" % "1.+",
+      "gov.nasa.race" %% "race-air" % "1.+",
+      "gov.nasa.race" %% "race-ww" % "1.+",
+      "gov.nasa.race" %% "race-ww-air" % "1.+",       // depends on race-core, race-ww, race-air but since we use those explicitly we define the dependencies
       "uk.me.g4dpz" % "predict4java" % "1.1.3",   // satellite position calculation (https://github.com/badgersoftdotcom/predict4java)
       "com.github.nscala-time" %% "nscala-time" %  "latest.release" // the famous org.joda.DateTime
     )
