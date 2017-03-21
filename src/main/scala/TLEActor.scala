@@ -17,6 +17,7 @@ package race.example.tle
 
 import akka.actor.ActorRef
 import com.typesafe.config.Config
+import gov.nasa.race._
 import gov.nasa.race.air.FlightPos
 import gov.nasa.race.config.ConfigUtils._
 import gov.nasa.race.core.Messages.RaceTick
@@ -37,8 +38,9 @@ class TLEActor (val config: Config) extends PublishingRaceActor with ContinuousT
   val satellite = SatelliteFactory.createSatellite(tle)
 
   override def onStartRaceActor(originator: ActorRef) = {
-    super.onStartRaceActor(originator)
-    startScheduler
+    ifTrue(super.onStartRaceActor(originator)){
+      startScheduler
+    }
   }
 
   override def handleMessage = {

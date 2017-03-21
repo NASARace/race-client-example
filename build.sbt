@@ -9,7 +9,7 @@ fork in run := true
 outputStrategy := Some(StdoutOutput)
 Keys.connectInput in run := true
 
-val raceVersion = "1.3.+"
+val raceVersion = "1.4.+"
 
 lazy val root = (project in file(".")).
   enablePlugins(JavaAppPackaging). // provides 'stage' task to generate stand alone scripts that can be executed outside SBT
