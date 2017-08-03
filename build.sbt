@@ -2,7 +2,7 @@
 
 
 name := "race-client-example"
-scalaVersion := "2.12.1"
+scalaVersion := "2.12.3"
 
 // those settings are not RACE specific but recommended when running applications from within a SBT shell
 fork in run := true
@@ -12,7 +12,7 @@ Keys.connectInput in run := true
 val raceVersion = "1.4.+"
 
 lazy val root = (project in file(".")).
-  enablePlugins(JavaAppPackaging). // provides 'stage' task to generate stand alone scripts that can be executed outside SBT
+  enablePlugins(JavaAppPackaging,LauncherJarPlugin). // provides 'stage' task to generate stand alone scripts that can be executed outside SBT
   settings(
     mainClass in Compile := Some("gov.nasa.race.main.ConsoleMain"),  // we just use RACEs driver
     libraryDependencies ++= Seq(
