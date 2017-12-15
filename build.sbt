@@ -2,14 +2,14 @@
 
 
 name := "race-client-example"
-scalaVersion := "2.12.3"
+scalaVersion := "2.12.4"
 
 // those settings are not RACE specific but recommended when running applications from within a SBT shell
 fork in run := true
 outputStrategy := Some(StdoutOutput)
 Keys.connectInput in run := true
 
-val raceVersion = "1.4.+"
+val raceVersion = "1.5.+"
 
 lazy val root = (project in file(".")).
   enablePlugins(JavaAppPackaging,LauncherJarPlugin). // provides 'stage' task to generate stand alone scripts that can be executed outside SBT
